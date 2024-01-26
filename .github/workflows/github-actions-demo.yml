@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
-jobs:
+jobs: 
   Explore-GitHub-Actions:
     runs-on: self-hosted
     defaults:
@@ -22,3 +22,5 @@ jobs:
         run: npm run test
       - name: Build App
         run: npm run build
+      - name: Deploy App
+        run: sudo rsync -a ./build/ /var/www/html
